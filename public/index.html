@@ -7,7 +7,7 @@
   <meta name="description" content="Smash patty, ev yapımı brioche, iki kat cheddar. Manjelo Burger, Bahçeşehir'de.">
   <meta name="theme-color" content="#6B1520">
   <link rel="canonical" href="https://manjeloburger.com/">
-  <link rel="icon" href="favicon.svg?v=20260930b" type="image/svg+xml">
+  <link rel="icon" href="favicon.svg?v=20260930c" type="image/svg+xml">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
@@ -20,8 +20,8 @@
 
   <link rel="preload" href="fonts/anton-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/fonts.css?v=20260930b">
-  <link rel="stylesheet" href="css/style.css?v=20260930b">
+  <link rel="stylesheet" href="css/fonts.css?v=20260930c">
+  <link rel="stylesheet" href="css/style.css?v=20260930c">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -46,10 +46,13 @@
 
   <main>
 
-    <!-- Hero: fotoğraf eklemek için images/hero.jpg yükleyip aşağıdaki img satırını açın -->
     <section class="hero">
       <div class="hero__sahne">
-        <!-- <img class="hero__foto" src="images/hero.jpg" alt="Manjelo Burger mutfağından bir smash burger"> -->
+        <picture>
+          <source type="image/webp" srcset="images/hero-768.webp 768w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w" sizes="100vw">
+          <img class="hero__foto" src="images/hero-1280.jpg" alt="Manjelo Burger Bahçeşehir salonu" width="1280" height="720" fetchpriority="high">
+        </picture>
+        <div class="hero__ton" aria-hidden="true"></div>
         <div class="hero__alt">
           <div class="kap hero__izgara">
             <div class="hero__baslik" data-anim>
@@ -268,8 +271,8 @@
     </div>
   </footer>
 
-  <script src="js/site.js?v=20260930b" defer></script>
-  <script src="js/instagram.js?v=20260930b" defer></script>
+  <script src="js/site.js?v=20260930c" defer></script>
+  <script src="js/instagram.js?v=20260930c" defer></script>
 
 </body>
 </html>
