@@ -1,11 +1,8 @@
 name: Hostinge yükle (cPanel)
 
+# Site, sunucudaki cron işiyle GitHub'dan çekiliyor (bkz. README).
+# Bu akış yedek olarak duruyor ve yalnızca elle çalıştırılır (Actions → Run workflow).
 on:
-  push:
-    branches: [main]
-    paths:
-      - "public/**"
-      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 concurrency:

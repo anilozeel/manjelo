@@ -14,23 +14,22 @@ public/              → sunucudaki public_html/ klasörüne birebir yüklenir
 
 ## Yayına alma
 
-`main` dalına `public/` altında bir değişiklik gönderildiğinde GitHub Actions
-siteyi SFTP (SSH) ile cPanel'deki `public_html/` klasörüne yükler. Sunucu FTPS
-desteklemiyor; SSH kullanılamazsa `DEPLOY_PROTOCOL` değişkeni `ftp` yapılarak
-şifresiz FTP'ye geçilebilir
-(`.github/workflows/deploy.yml`). Elle çalıştırmak için: **Actions → Hostinge
-yükle → Run workflow**.
+Sunucu siteyi GitHub'dan kendisi çeker. cPanel → **Cron İşleri**'nde 5 dakikada
+bir çalışan şu komut, `main` dalındaki son hali `public_html/` klasörüne kopyalar:
 
-Gerekli ayar (bir kez):
+```
+(cd ~ && (test -d manjelo || git clone -q https://github.com/anilozeel/manjelo.git) && cd manjelo && git pull -q --ff-only && cp -a public/. ~/public_html/) > /dev/null 2>&1
+```
 
-- **Settings → Secrets and variables → Actions → New repository secret**
-  - `FTP_PASSWORD` → cPanel (`manjelob`) şifresi
+Yani `main`'e gönderilen bir değişiklik en geç 5 dakikada yayına girer. Bu
+yöntem reponun herkese açık olmasına dayanır (sunucu kimlik bilgisi olmadan
+klonluyor).
 
-Varsayılanlar: sunucu `mt-charon.guzelhosting.com`, kullanıcı `manjelob`,
-hedef `public_html/`. Farklı bir FTP hesabı kullanılacaksa aynı sayfadaki
-**Variables** sekmesinden `FTP_SERVER`, `FTP_USERNAME`, `FTP_SERVER_DIR`,
-`SSH_PORT` (varsayılan 22) ve `DEPLOY_PROTOCOL` (`sftp` / `ftp`) tanımlanabilir (örneğin dizini doğrudan `public_html` olan bir FTP hesabı için
-`FTP_SERVER_DIR` = `./`).
+`.github/workflows/deploy.yml` yedek olarak duruyor ve yalnızca elle
+çalıştırılır. Sunucu FTPS desteklemiyor, SSH (22) de kapalı olduğu için bu akış
+ancak `FTP_PASSWORD` secret'ı ve Variables sekmesindeki `FTP_USERNAME`,
+`FTP_SERVER_DIR`, `DEPLOY_PROTOCOL` (`ftp` / `sftp`), `SSH_PORT` ayarlarıyla
+kullanılabilir.
 
 ## Fotoğraf eklemek
 
