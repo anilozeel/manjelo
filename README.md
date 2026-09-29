@@ -34,7 +34,7 @@ kullanılabilir.
 ## Önbellek
 
 `index.html` stil ve betik dosyalarını `?v=...` sürümüyle çağırır
-(`css/style.css?v=20260930a`). CSS/JS değiştiğinde bu değeri artırın; aksi
+(`css/style.css?v=20260930b`). CSS/JS değiştiğinde bu değeri artırın; aksi
 halde ziyaretçilerin tarayıcısı eski dosyayı bir hafta kullanabilir.
 
 ## İkonlar

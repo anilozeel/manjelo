@@ -347,6 +347,15 @@ img { display: block; max-width: 100%; }
 .duvar__etiket { font-size: 14px; font-weight: 700; letter-spacing: 1.6px; color: var(--kirmizi); }
 .duvar__izgara { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 24px; }
 .duvar__izgara .foto { aspect-ratio: 1; border: 2px solid var(--bordo); border-radius: 16px; }
+.duvar__gor {
+  position: absolute; left: 10px; right: 10px; bottom: 10px;
+  font-family: var(--anton); font-size: 13px; letter-spacing: .8px; text-align: center;
+  background: var(--bordo); color: var(--krem);
+  padding: 7px 10px; border-radius: 999px;
+  opacity: 0; translate: 0 6px; transition: opacity .2s, translate .2s;
+}
+.duvar__kare:hover .duvar__gor, .duvar__kare:focus-visible .duvar__gor { opacity: 1; translate: 0 0; }
+@media (hover: none) { .duvar__gor { opacity: 1; translate: 0 0; font-size: 11px; padding: 5px 8px; } }
 a.foto img:not(.ikon) { transition: transform .3s; }
 a.foto:hover img:not(.ikon) { transform: scale(1.04); }
 .duvar__not {
