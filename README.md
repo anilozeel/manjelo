@@ -15,7 +15,9 @@ public/              → sunucudaki public_html/ klasörüne birebir yüklenir
 ## Yayına alma
 
 `main` dalına `public/` altında bir değişiklik gönderildiğinde GitHub Actions
-siteyi FTPS ile cPanel'deki `public_html/` klasörüne yükler
+siteyi SFTP (SSH) ile cPanel'deki `public_html/` klasörüne yükler. Sunucu FTPS
+desteklemiyor; SSH kullanılamazsa `DEPLOY_PROTOCOL` değişkeni `ftp` yapılarak
+şifresiz FTP'ye geçilebilir
 (`.github/workflows/deploy.yml`). Elle çalıştırmak için: **Actions → Hostinge
 yükle → Run workflow**.
 
@@ -26,8 +28,8 @@ Gerekli ayar (bir kez):
 
 Varsayılanlar: sunucu `mt-charon.guzelhosting.com`, kullanıcı `manjelob`,
 hedef `public_html/`. Farklı bir FTP hesabı kullanılacaksa aynı sayfadaki
-**Variables** sekmesinden `FTP_SERVER`, `FTP_USERNAME`, `FTP_SERVER_DIR`
-tanımlanabilir (örneğin dizini doğrudan `public_html` olan bir FTP hesabı için
+**Variables** sekmesinden `FTP_SERVER`, `FTP_USERNAME`, `FTP_SERVER_DIR`,
+`SSH_PORT` (varsayılan 22) ve `DEPLOY_PROTOCOL` (`sftp` / `ftp`) tanımlanabilir (örneğin dizini doğrudan `public_html` olan bir FTP hesabı için
 `FTP_SERVER_DIR` = `./`).
 
 ## Fotoğraf eklemek
