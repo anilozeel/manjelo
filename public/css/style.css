@@ -189,7 +189,7 @@ img { display: block; max-width: 100%; }
 .hero h1 {
   font-family: var(--anton); font-weight: 400;
   color: var(--krem);
-  font-size: clamp(64px, 9vw, 150px);
+  font-size: clamp(50px, 7.4vw, 124px);
   line-height: .95;
   margin-top: 14px;
   text-transform: uppercase;
@@ -298,6 +298,21 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   background: repeating-linear-gradient(135deg, var(--bej-koyu) 0 12px, var(--bej) 12px 24px);
 }
+.harita { display: block; }
+.harita:hover { box-shadow: 5px 5px 0 rgba(107,21,32,.16); }
+.harita__etiket {
+  position: absolute; top: calc(46% - 44px); left: 48%; transform: translateX(-40%);
+  font-family: var(--anton); font-size: 15px; letter-spacing: 1px;
+  background: var(--bordo); color: var(--krem);
+  padding: 6px 12px; border-radius: 999px;
+}
+.harita__ac {
+  position: absolute; right: 16px; bottom: 14px;
+  font-family: var(--anton); font-size: 14px; letter-spacing: 1px;
+  color: var(--bordo); background: var(--krem);
+  padding: 8px 14px; border-radius: 999px; border: 2px solid var(--bordo);
+}
+.harita:hover .harita__ac { background: var(--bordo); color: var(--krem); }
 .harita__pin {
   position: absolute;
   width: 20px; height: 20px; border-radius: 50%;
@@ -329,6 +344,8 @@ img { display: block; max-width: 100%; }
 .duvar__etiket { font-size: 14px; font-weight: 700; letter-spacing: 1.6px; color: var(--kirmizi); }
 .duvar__izgara { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 24px; }
 .duvar__izgara .foto { aspect-ratio: 1; border: 2px solid var(--bordo); border-radius: 16px; }
+a.foto img { transition: transform .3s; }
+a.foto:hover img { transform: scale(1.04); }
 .duvar__not {
   margin-top: 18px;
   display: flex; align-items: center; gap: 14px;
