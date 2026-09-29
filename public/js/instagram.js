@@ -15,7 +15,8 @@
           p.thumbnailUrl || p.mediaUrl;
         if (!gorsel) return;
         var a = document.createElement('a');
-        a.className = 'foto';
+        a.className = 'foto gorunur';
+        a.setAttribute('data-anim', '');
         a.href = p.permalink;
         a.target = '_blank';
         a.rel = 'noopener';

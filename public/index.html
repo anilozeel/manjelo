@@ -7,7 +7,7 @@
   <meta name="description" content="Smash patty, ev yapımı brioche, iki kat cheddar. Manjelo Burger, Bahçeşehir'de.">
   <meta name="theme-color" content="#6B1520">
   <link rel="canonical" href="https://manjeloburger.com/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.svg?v=20260930a" type="image/svg+xml">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
@@ -20,16 +20,17 @@
 
   <link rel="preload" href="fonts/anton-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fonts.css?v=20260930a">
+  <link rel="stylesheet" href="css/style.css?v=20260930a">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
   <header class="ust">
     <div class="kap ust__ic">
       <a class="logo" href="/" aria-label="Manjelo Burger ana sayfa">
-        <span class="logo__daire" aria-hidden="true">MJ</span>
-        <span class="logo__yazi">MANJELO<br><span>BURGER</span></span>
+        <img class="logo__mj" src="images/ikon/mj.svg" alt="" width="69" height="88">
+        <img class="logo__yazi" src="images/ikon/logo.svg" alt="Manjelo Burger" width="137" height="80">
       </a>
       <nav class="nav" aria-label="Ana menü">
         <div class="nav__linkler">
@@ -48,14 +49,14 @@
     <!-- Hero: fotoğraf eklemek için images/hero.jpg yükleyip aşağıdaki img satırını açın -->
     <section class="hero">
       <div class="hero__sahne">
-        <!-- <img src="images/hero.jpg" alt="Manjelo Burger mutfağından bir smash burger"> -->
+        <!-- <img class="hero__foto" src="images/hero.jpg" alt="Manjelo Burger mutfağından bir smash burger"> -->
         <div class="hero__alt">
           <div class="kap hero__izgara">
-            <div>
+            <div class="hero__baslik" data-anim>
               <div class="hero__yer">Bahçeşehir</div>
-              <h1>Smash’in olayı<br>burada başlar</h1>
+              <h1><span>Smash’in olayı</span> <span>burada başlar</span></h1>
             </div>
-            <div>
+            <div data-anim>
               <p class="hero__metin">Günde iki kez pişen brioche, taş baskı smash patty, üç sos. Deneyimi tezgahta kuruyoruz.</p>
               <div class="hero__butonlar">
                 <a class="buton buton--kirmizi" href="https://manjeloburger.ticimenu.com/menu" target="_blank" rel="noopener">MENÜYÜ AÇ</a>
@@ -64,29 +65,33 @@
             </div>
           </div>
         </div>
-        <div class="etiket hero__etiket" aria-hidden="true">GRIP IT.<br>RIP IT.<br>BITE IT.</div>
-        <div class="rozet hero__rozet" aria-hidden="true">MJ</div>
+        <img class="ikon hero__ikon hero__ikon--sol" src="images/ikon/mj.svg" alt="" width="69" height="88" aria-hidden="true">
+        <img class="ikon hero__ikon hero__ikon--sag" src="images/ikon/crunch.svg" alt="" width="123" height="71" aria-hidden="true">
+        <img class="ikon hero__ikon hero__ikon--orta" src="images/ikon/milkshake.svg" alt="" width="67" height="85" aria-hidden="true">
       </div>
     </section>
 
     <div class="kayan" aria-hidden="true">
       <div class="kayan__serit">
         <div class="kayan__grup">
-          <span>TIME TO FEAST</span><span>·</span><span>GRIP IT. RIP IT. BITE IT.</span><span>·</span><span>CROWNED BY CRAVINGS</span><span>·</span><span>SMASH ONLY</span><span>·</span>
+          <span>TIME TO FEAST</span><img class="kayan__ikon" src="images/ikon/burger.svg" alt="" width="62" height="60"><span>GRIP IT. RIP IT. BITE IT.</span><img class="kayan__ikon" src="images/ikon/patates.svg" alt="" width="57" height="69"><span>CROWNED BY CRAVINGS</span><img class="kayan__ikon" src="images/ikon/milkshake.svg" alt="" width="67" height="85"><span>SMASH ONLY</span><img class="kayan__ikon" src="images/ikon/domates.svg" alt="" width="73" height="61">
         </div>
         <div class="kayan__grup">
-          <span>TIME TO FEAST</span><span>·</span><span>GRIP IT. RIP IT. BITE IT.</span><span>·</span><span>CROWNED BY CRAVINGS</span><span>·</span><span>SMASH ONLY</span><span>·</span>
+          <span>TIME TO FEAST</span><img class="kayan__ikon" src="images/ikon/burger.svg" alt="" width="62" height="60"><span>GRIP IT. RIP IT. BITE IT.</span><img class="kayan__ikon" src="images/ikon/patates.svg" alt="" width="57" height="69"><span>CROWNED BY CRAVINGS</span><img class="kayan__ikon" src="images/ikon/milkshake.svg" alt="" width="67" height="85"><span>SMASH ONLY</span><img class="kayan__ikon" src="images/ikon/domates.svg" alt="" width="73" height="61">
         </div>
       </div>
     </div>
 
     <section id="menu" class="kap bolum">
       <div class="menu__ust">
-        <div>
-          <div class="ust-baslik">7 burger · 4 side</div>
-          <h2 class="baslik">Menü</h2>
+        <div class="baslik-satir" data-anim>
+          <div>
+            <div class="ust-baslik">7 burger · 4 side</div>
+            <h2 class="baslik">Menü</h2>
+          </div>
+          <img class="ikon ikon--baslik" src="images/ikon/burger.svg" alt="" width="62" height="60" aria-hidden="true">
         </div>
-        <div class="menu__kategoriler">
+        <div class="menu__kategoriler" data-anim>
           <a class="kategori kategori--aktif" href="https://manjeloburger.ticimenu.com/menu" target="_blank" rel="noopener">BURGER</a>
           <a class="kategori" href="https://manjeloburger.ticimenu.com/menu" target="_blank" rel="noopener">SIDES</a>
           <a class="kategori" href="https://manjeloburger.ticimenu.com/menu" target="_blank" rel="noopener">SOSLAR</a>
@@ -96,47 +101,47 @@
 
       <!-- Ürün fotoğrafı eklemek için: <div class="foto"><img src="images/mj-classic.jpg" alt="MJ Classic"></div> -->
       <div class="menu__izgara">
-        <article class="urun">
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
+        <article class="urun" data-anim>
+          <div class="foto"><img class="ikon foto__ikon" src="images/ikon/burger.svg" alt="" width="62" height="60" aria-hidden="true"></div>
           <div class="urun__bilgi">
             <div class="urun__etiket">en çok satan</div>
             <h3>MJ Classic</h3>
             <p>Tek smash patty, cheddar, turşu, MJ sos</p>
           </div>
         </article>
-        <article class="urun">
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
+        <article class="urun" data-anim>
+          <div class="foto"><img class="ikon foto__ikon" src="images/ikon/mj.svg" alt="" width="69" height="88" aria-hidden="true"></div>
           <div class="urun__bilgi">
             <div class="urun__etiket">imza</div>
             <h3>Double Crown</h3>
             <p>İki patty, iki cheddar, karamelize soğan</p>
           </div>
         </article>
-        <article class="urun">
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
+        <article class="urun" data-anim>
+          <div class="foto"><img class="ikon foto__ikon" src="images/ikon/domates.svg" alt="" width="73" height="61" aria-hidden="true"></div>
           <div class="urun__bilgi">
             <div class="urun__etiket">acı</div>
             <h3>Hot Mango</h3>
             <p>Acı biber sos, mango relish, jalapeño</p>
           </div>
         </article>
-        <article class="urun">
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
+        <article class="urun" data-anim>
+          <div class="foto"><img class="ikon foto__ikon" src="images/ikon/crispy.svg" alt="" width="105" height="102" aria-hidden="true"></div>
           <div class="urun__bilgi">
             <div class="urun__etiket">tavuk</div>
             <h3>Crispy Bird</h3>
             <p>Çıtır tavuk göğsü, coleslaw, ranch</p>
           </div>
         </article>
-        <article class="urun">
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
+        <article class="urun" data-anim>
+          <div class="foto"><img class="ikon foto__ikon" src="images/ikon/patates-kutu.svg" alt="" width="65" height="77" aria-hidden="true"></div>
           <div class="urun__bilgi">
             <div class="urun__etiket">vejetaryen</div>
             <h3>Green Bun</h3>
             <p>Mantar patty, avokado, vegan mayo</p>
           </div>
         </article>
-        <a class="menu__tumu" href="https://manjeloburger.ticimenu.com/menu" target="_blank" rel="noopener">
+        <a class="menu__tumu" data-anim href="https://manjeloburger.ticimenu.com/menu" target="_blank" rel="noopener">
           <span>Tüm menü<br>ve fiyatlar</span>
           <span aria-hidden="true">→</span>
         </a>
@@ -145,7 +150,7 @@
 
     <section id="hikaye" class="hikaye">
       <div class="kap hikaye__izgara">
-        <div>
+        <div data-anim>
           <div class="etiket">HİKAYE</div>
           <h2 class="baslik">Bir tezgah,<br>iki kişi,<br>tek patty</h2>
           <p>Manjelo, Amerikan diner kültürünü kopyalamak için değil; o kültürün doğrudanlığını buraya taşımak için açıldı. Kısa menü, yüksek ses, temiz malzeme.</p>
@@ -155,20 +160,26 @@
             <div class="sayi"><strong>%100</strong><span>dana kıyma</span></div>
           </div>
         </div>
-        <div class="foto foto--koyu"><span class="foto__mj" aria-hidden="true">MJ</span></div>
+        <div class="hikaye__gorsel" data-anim>
+          <div class="foto foto--koyu"><img class="ikon foto__ikon foto__ikon--buyuk" src="images/ikon/mj.svg" alt="" width="69" height="88" aria-hidden="true"></div>
+          <img class="ikon hikaye__ikon" src="images/ikon/patates-kutu.svg" alt="" width="65" height="77" aria-hidden="true">
+        </div>
       </div>
     </section>
 
     <section id="subeler" class="kap bolum">
-      <h2 class="baslik">Şubeler</h2>
+      <div class="baslik-satir" data-anim>
+        <h2 class="baslik">Şubeler</h2>
+        <img class="ikon ikon--baslik" src="images/ikon/domates.svg" alt="" width="73" height="61" aria-hidden="true">
+      </div>
       <div class="subeler__izgara">
-        <a class="harita" href="https://share.google/wjhguoLqbdVJhkcKW" target="_blank" rel="noopener" aria-label="Bahçeşehir şubesini Google Haritalar'da aç">
-          <span class="harita__pin" style="top: 46%; left: 48%;"></span>
-          <span class="harita__etiket">BAHÇEŞEHİR</span>
-          <span class="harita__ac">Haritada aç →</span>
-        </a>
+        <div class="harita" data-anim>
+          <!-- Pin yanlış yerdeyse: Google Haritalar > Paylaş > Harita yerleştir'den alınan src ile değiştirin -->
+          <iframe src="https://www.google.com/maps?q=Manjelo+Burger+Bah%C3%A7e%C5%9Fehir+%C4%B0stanbul&amp;hl=tr&amp;z=15&amp;output=embed" title="Manjelo Burger Bahçeşehir haritası" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <a class="harita__ac" href="https://share.google/wjhguoLqbdVJhkcKW" target="_blank" rel="noopener">Haritada aç →</a>
+        </div>
         <div class="sube-liste">
-          <div class="sube">
+          <div class="sube" data-anim>
             <div>
               <h3>Bahçeşehir</h3>
               <!-- TODO: açık adres ve çalışma saatleri -->
@@ -176,14 +187,18 @@
             </div>
             <a class="sube__yol" href="https://share.google/wjhguoLqbdVJhkcKW" target="_blank" rel="noopener">YOL TARİFİ</a>
           </div>
+          <img class="ikon sube__ikon" src="images/ikon/patates.svg" alt="" width="57" height="69" aria-hidden="true">
         </div>
       </div>
     </section>
 
     <section class="duvar" id="instagram">
       <div class="kap bolum">
-        <div class="duvar__ust">
-          <h2 class="baslik">Duvar</h2>
+        <div class="duvar__ust" data-anim>
+          <div class="baslik-satir">
+            <h2 class="baslik">Duvar</h2>
+            <img class="ikon ikon--baslik" src="images/ikon/crispy.svg" alt="" width="105" height="102" aria-hidden="true">
+          </div>
           <span class="duvar__etiket">#MANJELOBURGER</span>
         </div>
         <!--
@@ -192,15 +207,15 @@
           ID boşsa ya da akış yüklenemezse aşağıdaki MJ kareleri görünür.
         -->
         <div class="duvar__izgara" id="instagram-akis" data-feed="">
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
-          <div class="foto"><span class="foto__mj" aria-hidden="true">MJ</span></div>
+          <div class="foto" data-anim><img class="ikon foto__ikon" src="images/ikon/burger.svg" alt="" width="62" height="60" aria-hidden="true"></div>
+          <div class="foto" data-anim><img class="ikon foto__ikon" src="images/ikon/patates.svg" alt="" width="57" height="69" aria-hidden="true"></div>
+          <div class="foto" data-anim><img class="ikon foto__ikon" src="images/ikon/milkshake.svg" alt="" width="67" height="85" aria-hidden="true"></div>
+          <div class="foto" data-anim><img class="ikon foto__ikon" src="images/ikon/domates.svg" alt="" width="73" height="61" aria-hidden="true"></div>
+          <div class="foto" data-anim><img class="ikon foto__ikon" src="images/ikon/patates-kutu.svg" alt="" width="65" height="77" aria-hidden="true"></div>
+          <div class="foto" data-anim><img class="ikon foto__ikon" src="images/ikon/mj.svg" alt="" width="69" height="88" aria-hidden="true"></div>
         </div>
-        <div class="duvar__not">
-          <span class="foto__mj" aria-hidden="true">MJ</span>
+        <div class="duvar__not" data-anim>
+          <img class="ikon duvar__not-ikon" src="images/ikon/mj.svg" alt="" width="69" height="88" aria-hidden="true">
           <span>Etiketle, ayın en iyi karesi menüde bir hafta bedava yer.</span>
         </div>
       </div>
@@ -208,12 +223,13 @@
 
     <section id="kariyer" class="kariyer">
       <div class="kariyer__daire" aria-hidden="true"></div>
+      <img class="ikon kariyer__ikon" src="images/ikon/milkshake.svg" alt="" width="67" height="85" aria-hidden="true">
       <div class="kap bolum kariyer__izgara">
-        <div>
+        <div data-anim>
           <div class="etiket">KARİYER</div>
           <h2 class="baslik">Tezgahın<br>arkasına geç</h2>
         </div>
-        <div>
+        <div data-anim>
           <p>Grill, kasa, paket. Deneyim şart değil; vardiya disiplini şart. Eğitim bizden.</p>
           <div class="haplar">
             <span class="hap">Tam / yarı zamanlı</span>
@@ -230,7 +246,14 @@
 
   <footer class="alt">
     <div class="kap alt__ic">
-      <div class="alt__marka">Manjelo Burger</div>
+      <div class="alt__marka" data-anim>Manjelo Burger</div>
+      <div class="alt__ikonlar" aria-hidden="true">
+        <img class="ikon " src="images/ikon/burger.svg" alt="" width="62" height="60" aria-hidden="true">
+        <img class="ikon " src="images/ikon/patates.svg" alt="" width="57" height="69" aria-hidden="true">
+        <img class="ikon " src="images/ikon/crunch.svg" alt="" width="123" height="71" aria-hidden="true">
+        <img class="ikon " src="images/ikon/milkshake.svg" alt="" width="67" height="85" aria-hidden="true">
+        <img class="ikon " src="images/ikon/mj.svg" alt="" width="69" height="88" aria-hidden="true">
+      </div>
       <div class="alt__linkler">
         <!-- TODO: Instagram ve TikTok hesap adresleri -->
         <a class="alt__link" href="#" target="_blank" rel="noopener">Instagram</a>
@@ -244,7 +267,8 @@
     </div>
   </footer>
 
-  <script src="js/instagram.js" defer></script>
+  <script src="js/site.js?v=20260930a" defer></script>
+  <script src="js/instagram.js?v=20260930a" defer></script>
 
 </body>
 </html>

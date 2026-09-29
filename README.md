@@ -31,6 +31,19 @@ ancak `FTP_PASSWORD` secret'ı ve Variables sekmesindeki `FTP_USERNAME`,
 `FTP_SERVER_DIR`, `DEPLOY_PROTOCOL` (`ftp` / `sftp`), `SSH_PORT` ayarlarıyla
 kullanılabilir.
 
+## Önbellek
+
+`index.html` stil ve betik dosyalarını `?v=...` sürümüyle çağırır
+(`css/style.css?v=20260930a`). CSS/JS değiştiğinde bu değeri artırın; aksi
+halde ziyaretçilerin tarayıcısı eski dosyayı bir hafta kullanabilir.
+
+## İkonlar
+
+`public/images/ikon/` altındaki SVG'ler marka sticker setinden vektöre
+çevrildi. Sitede `class="ikon"` ile kullanılır ve sağa sola sallanır
+(`--aci` bekleme açısı, `--sure` süre). Kaydırınca beliren öğeler
+`data-anim` özniteliği taşır (`js/site.js`).
+
 ## Fotoğraf eklemek
 
 Tasarımdaki fotoğraf alanları şimdilik markalı desenle dolu. Görseli
