@@ -1,0 +1,43 @@
+name: Hostinge yükle (cPanel FTP)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Şifre tanımlı mı?
+        id: kontrol
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          if [ -z "$FTP_PASSWORD" ]; then
+            echo "::warning::FTP_PASSWORD secret'ı tanımlı değil; yükleme atlandı. Settings > Secrets and variables > Actions bölümünden ekleyin."
+            echo "hazir=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "hazir=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.kontrol.outputs.hazir == 'true'
+
+      - name: public/ klasörünü public_html'e yükle
+        if: steps.kontrol.outputs.hazir == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ vars.FTP_SERVER || 'mt-charon.guzelhosting.com' }}
+          username: ${{ vars.FTP_USERNAME || 'manjelob' }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./public/
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/' }}
